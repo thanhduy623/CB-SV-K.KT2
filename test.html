@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parameter Handling</title>
+<script>
+  window.onload = function() {
+    // Lấy tất cả query parameters từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Kiểm tra xem có bất kỳ parameter nào không
+    if (urlParams.toString()) {
+      // Hiển thị tất cả các parameter lên trang
+      let paramsText = "";
+      urlParams.forEach((value, key) => {
+        paramsText += `${key}: ${value}<br>`;
+      });
+
+      document.getElementById('parameterValue').innerHTML = paramsText;
+
+      // Xóa query parameters khỏi URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else {
+      // Hiển thị thông báo khi không có parameter
+      document.getElementById('noDataMessage').style.display = 'block';
+    }
+  };
+</script>
+</head>
+<body>
+  <div id="content">
+    <h1>Parameter Handling</h1>
+    <p id="parameterValue"></p>
+    <p id="noDataMessage" style="display: none;">Không có dữ liệu để hiển thị.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        function generateQR() {
+            let data = document.getElementById("inputData").value;
+            
+            // Mã hóa dữ liệu bằng Base64 (hoặc sử dụng JWT để an toàn hơn)
+            let encodedData = btoa(data);
+
+            // Tạo URL chứa dữ liệu mã hóa
+            let url = `https://yourwebsite.com/submitQR.html?data=${encodedData}`;
+
+            // Tạo QR Code
+            document.getElementById("qrcode").innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), url);
+        }
+    </script>
+</head>
+<body>
+    <h2>Tạo QR Code</h2>
+    <input type="text" id="inputData" placeholder="Nhập dữ liệu...">
+    <button onclick="generateQR()">Tạo QR</button>
+    <div id="qrcode"></div>
+</body>
+</html>

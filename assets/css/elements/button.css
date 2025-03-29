@@ -1,0 +1,20 @@
+.btn {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid gray;
+
+    
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--second-color);
+}
+
+.base-btn {
+    background-color: var(--second-color);
+}

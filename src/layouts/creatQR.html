@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <link rel="stylesheet" href="/assets/css/elements/defalut.css">
+    <link rel="stylesheet" href="/assets/css/elements/header.css">
+    <link rel="stylesheet" href="/assets/css/elements/button.css">
+    <link rel="stylesheet" href="/assets/css/elements/form.css">
+    <link rel="stylesheet" href="/assets/css/pages/createQR.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Phần nhập thông tin sự kiện -->
+        <div class="box-content">
+            <img class="logo" src="https://www.tdtu.edu.vn/sites/www/files/logo_2.png" alt="">
+            <h1>TẠO MÃ QR ĐIỂM DANH</h1>
+            <div class="form-group">
+                <label for="type-event">Chọn loại sự kiện</label>
+                <select class="element-input" id="type-event">
+                    <option value="sinh-hoat">Sinh hoạt chi bộ</option>
+                    <option value="ket-nap">Kết nạp Đảng viên mới</option>
+                    <option value="ve-nguon">Hoạt động về nguồn</option>
+                </select>                
+            </div>
+            <div class="form-group">
+                <label for="date-event">Ngày diễn ra sự kiện</label>
+                <input class="element-input" type="date" id="date-event">
+            </div>
+            <div class="form-group">
+                <label for="time-duration">Thời gian hiển thị QR</label>
+                <select class="element-input" id="time-duration">
+                    <option value="15">15 giây</option>
+                    <option value="30">30 giây</option>
+                    <option value="60">60 giây</option>
+                    <option value="90">90 giây</option>
+                </select>                
+            </div>
+            <div class="form-group">
+                <button class="primary-btn btn" id="creat-qr-btn">TẠO MÃ</button>
+            </div>
+        </div>
+
+        <!-- Phần hiển thị mã QR -->
+        <div class="box-content">
+            <h1>MÃ QR ĐIỂM DANH</h1>
+            <img class="QR-box" src="https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/476144941_924204639830916_2492686653070936378_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH605KX0dMe4HOlkILB_9qFOIJR3uWXRro4glHe5ZdGutXTf7ZYWLMiz8vJP_DHZCulGaHNhk5ymDJlfTWxOKFg&_nc_ohc=NPnbDuxwedwQ7kNvgG6-dbi&_nc_oc=AdmghKp3tZ61D-JeUauWRK1pOBX2QOTZOFed8NNIStEjwVpShhB4wus_4A-4HTCK4Nw&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=SuSelWGQgfqw1qeywX4EPg&oh=00_AYEK_FFfeGdKASdHoyLNGkLNyfFAWzyT9caYHo8iz2BGMg&oe=67ECA94B" alt="Mã QR">
+            <p>Thời gian còn lại <span id="countdown">XX</span> giây</p>
+        </div>        
+    </div>
+
+    <script src="/src/js/createQR.js"></script>
+</body>
+</html>
